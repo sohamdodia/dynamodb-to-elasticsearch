@@ -1,0 +1,30 @@
+{
+  "name": "dynamodb-to-elasticsearch",
+  "version": "0.1.0",
+  "description": "Module to dump DynamoDB data to ElasticSearch indices.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sohamdodia/dynamodb-to-elasticsearch"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dynamodb-to-elastic-search",
+    "dynamodb-to-elasticsearch",
+    "aws",
+    "dynamodb",
+    "elasticsearch",
+    "elastic-search"
+  ],
+  "author": "Soham Dodia",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.122.0",
+    "elasticsearch": "^13.3.1",
+    "http-aws-es": "^3.1.0",
+    "lodash": "^4.17.4",
+    "when": "^3.7.8"
+  }
+}
