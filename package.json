@@ -1,6 +1,6 @@
 {
   "name": "dynamodb-to-elasticsearch",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Module to dump DynamoDB data to ElasticSearch indices.",
   "repository": {
     "type": "git",
