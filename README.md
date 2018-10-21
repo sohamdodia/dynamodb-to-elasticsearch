@@ -25,7 +25,6 @@ $ npm install dynamodb-to-elasticsearch
 | table | string | Table name of dynamoDB whose data you want to dump in elastic-search.
 | indiceName | string | indice name of elastic-search on which you can perform query.
 | region | string | dynamodb table region
-| es_domain | string | elastic-search domain name
 | es_endpoint | string | elastic-search endpoint
 | es_data | object |
 | es_data.id | object | The name of `primaryKey` field for DynamoDB table. It should be unique identifier for documents. By default it is set to `sortKey`. 
@@ -44,7 +43,7 @@ const table = 'table',
 
 exports.handler = function(event, context, callback) {
 	d2es.exec(table, region, es_endpoint, es_data, (err, success) => {
-	    if (err) {
+		if (err) {
 			callback(err, null);
 		} else {
 			callback(null, success);
