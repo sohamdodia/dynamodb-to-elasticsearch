@@ -18,7 +18,7 @@ $ npm install dynamodb-to-elasticsearch
 
 ### Documentation
 
-`module.exec (table, indiceName, region, es_domain, es_string)`
+`module.exec (table, region, es_endpoint, es_data = { id: 'sortKey', type: 'datatype', indiceName: ''})`
 
 | Parameter | Type | Description
 | ------ | ------ | ------ |
