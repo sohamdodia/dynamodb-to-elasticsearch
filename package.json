@@ -1,10 +1,10 @@
 {
-  "name": "dynamodb-to-elasticsearch",
-  "version": "0.2.1",
+  "name": "@cheftonic/dynamodb-to-elasticsearch-offline",
+  "version": "0.3.0",
   "description": "Module to dump DynamoDB data to ElasticSearch indices.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sohamdodia/dynamodb-to-elasticsearch"
+    "url": "git+https://github.com/Cheftonic/dynamodb-to-elasticsearch.git"
   },
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "elasticsearch",
     "elastic-search"
   ],
-  "author": "Soham Dodia",
+  "author": "Carlos Delgado",
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.122.0",
@@ -26,5 +26,9 @@
     "http-aws-es": "^3.1.0",
     "lodash": "^4.17.4",
     "when": "^3.7.8"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Cheftonic/dynamodb-to-elasticsearch/issues"
+  },
+  "homepage": "https://github.com/Cheftonic/dynamodb-to-elasticsearch#readme"
 }
