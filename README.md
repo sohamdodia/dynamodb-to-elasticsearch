@@ -8,7 +8,7 @@ There's no blueprint in AWS Lambda that allows to dump DynamoDB data into Elasti
 
 ---
 
-### Installation
+## Installation
 
 ```sh
 $ npm install dynamodb-to-elasticsearch
@@ -16,7 +16,7 @@ $ npm install dynamodb-to-elasticsearch
 
 ## [Guide to configure AWS to use this blueprint](https://aws.amazon.com/blogs/compute/indexing-amazon-dynamodb-content-with-amazon-elasticsearch-service-using-aws-lambda)
 
-### Documentation
+## Documentation
 
 `module.exec (table, region, es_endpoint, es_data = { id: 'sortKey', type: 'datatype', indiceName: ''})`
 
@@ -31,24 +31,29 @@ $ npm install dynamodb-to-elasticsearch
 | es_data.type | object | Name of class of objects, which document represents. By default it is set to `datatype`.
 | es_data.indiceName | object | Index name of elastic-search on which you can perform query.
 
-### Example
+### Working locally
+
+When working on a Dynamodb running on localhost, make sure the `IS_OFFLINE` environment varible is set to `true`.
+The default port will be `8000` but it can be overriden by `LOCAL_DYNAMODB_PORT` environment variable.
+
+## Example
 
 ```javascript
 const d2es = require('dynamodb-to-elasticsearch');
 
 const table = 'table',
-	region = 'region',
-	es_endpoint = 'es_endpoint_value',
-	es_data = { id: 'sortKey', type: 'data', indiceName: 'candidates' }};
+  region = 'region',
+  es_endpoint = 'es_endpoint_value',
+  es_data = { id: 'sortKey', type: 'data', indiceName: 'candidates' }};
 
 exports.handler = function(event, context, callback) {
-	d2es.exec(table, region, es_endpoint, es_data, (err, success) => {
-		if (err) {
-			callback(err, null);
-		} else {
-			callback(null, success);
-		}
-	});
+  d2es.exec(table, region, es_endpoint, es_data, (err, success) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, success);
+    }
+  });
 }
 
 ```
