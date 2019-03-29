@@ -7,7 +7,13 @@ const AWS = require('aws-sdk'),
 
 exports.exec = function (table, region, es_endpoint, es_data = { id: 'sortKey', type: 'datatype' }, callback) {
   if (!es_data.indiceName) throw new Error('You should provide es_data.indiceName')
-  const docClient = new AWS.DynamoDB.DocumentClient({region: region})
+  
+  const docClient = (process.env.IS_OFFLINE) ? new AWS.DynamoDB.DocumentClient({
+    region: 'localhost',
+    endpoint: `http://localhost:${process.env.LOCAL_DYNAMODB_PORT || 8000}`,
+  }) :
+    new AWS.DynamoDB.DocumentClient({region: region});
+  
 
   // Promise - Describe the ES Domain in order to get the endpoint url
   when.promise(function (resolve) {
